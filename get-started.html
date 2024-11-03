@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victorian Study App - Get Started</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts Link for Cinzel -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function logout() {
+            alert("You have been logged out. Please log in again to continue.");
+            window.location.href = 'index.html';
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            // Placeholder for form submission logic
+            // You can integrate backend processing here
+            alert("Form submitted successfully!");
+            // Optionally, redirect to another page
+            // window.location.href = 'homepage.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="homepage.html">🏠 Home</a>
+        <a href="get-started.html">Get Started</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+    <div class="container">
+        <h1>📝 Get Started</h1>
+        <p>Upload your study materials and specify your preferences to begin your tailored learning experience with Sir Learnsworth.</p>
+        <form id="get-started-form" onsubmit="handleFormSubmit(event)">
+            <!-- PDF Upload Section -->
+            <label for="pdf-upload">Upload Your PDF:</label>
+            <input type="file" id="pdf-upload" name="pdf-upload" accept="application/pdf" required>
+            
+            <!-- Language Selection -->
+            <label for="language-selection">Choose Language:</label>
+            <select id="language-selection" name="language-selection" required>
+                <option value="" disabled selected>Select Language</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+            </select>
+            
+            <!-- Word Limit Input -->
+            <label for="word-limit">Word Limit:</label>
+            <input type="number" id="word-limit" name="word-limit" min="100" max="10000" placeholder="Enter word limit" required>
+            
+            <!-- Topic Focus Input -->
+            <label for="topic-focus">Topic to Focus On:</label>
+            <textarea id="topic-focus" name="topic-focus" rows="4" placeholder="Enter the topic you want to focus on" required></textarea>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

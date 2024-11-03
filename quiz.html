@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victorian Study App - Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts Link for Cinzel -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function logout() {
+            alert("You have been logged out. Please log in again to continue.");
+            window.location.href = 'index.html';
+        }
+
+        function handleQuizFormSubmit(event) {
+            event.preventDefault();
+            // Placeholder for quiz form submission logic
+            // You can integrate backend processing here
+            alert("Quiz settings submitted successfully!");
+            // Optionally, redirect to another page or start the quiz
+            // window.location.href = 'quiz-start.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="homepage.html">🏠 Home</a>
+        <a href="get-started.html">Get Started</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+    <div class="container">
+        <h1>🎯 Quiz Settings</h1>
+        <p>Configure your quiz preferences below to generate a tailored set of questions.</p>
+        <form id="quiz-form" onsubmit="handleQuizFormSubmit(event)">
+            <!-- Number of Questions -->
+            <label for="number-of-questions">Number of Questions:</label>
+            <input type="number" id="number-of-questions" name="number-of-questions" min="1" max="100" placeholder="Enter number of questions" required>
+            
+            <!-- Language Selection -->
+            <label for="quiz-language">Choose Language:</label>
+            <select id="quiz-language" name="quiz-language" required>
+                <option value="" disabled selected>Select Language</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+            </select>
+            
+            <!-- Topic Selection -->
+            <label for="quiz-topic">Topic to Focus On:</label>
+            <input type="text" id="quiz-topic" name="quiz-topic" placeholder="Enter the topic you want to focus on" required>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Generate Quiz</button>
+        </form>
+    </div>
+</body>
+</html>
