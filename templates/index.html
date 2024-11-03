@@ -13,12 +13,13 @@
             const password = document.getElementById("password").value;
             // Replace with actual API call to backend for login authentication
             if (username === "admin" && password === "password123") {
-                window.location.href = 'homepage.html';
+                // Redirect to the homepage route defined in Flask
+                window.location.href = '/homepage';
             } else {
                 alert("Incorrect username or password. Please try again.");
             }
         }
-    </script>
+    </script>    
 </head>
 <body>
     <div class="container" id="login-container">
